@@ -1,0 +1,30 @@
+#include "kbc.h"
+
+
+extern int sysCounter = 0; //Initializing counter for function sys_inb() calls
+
+int kbc_subscribe_int()
+{
+
+}
+
+int sys_inb_count(port_t port, uint32_t *byte)
+{
+	int res = sys_inb(port, byte); //Tests for error
+	sysCounter++; //Increments counter everytime the function is called
+
+  	return res; //Returns 0 if successful, 1 otherwise
+}
+
+int util_sys_inb(port_t port, uint8_t *byte)
+{
+	uint32_t temp; //Temporary variable for calling sys_inb() function
+
+  	if (sys_inb_count(port, &temp) != 0) //Tests for error
+    	return 1; //Returns 1 if there's an error
+
+  	(*byte) = (uint8_t) temp; //Cast
+
+  	return 0; //Returns 0 upon success
+}
+

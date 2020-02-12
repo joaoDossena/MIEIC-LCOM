@@ -1,0 +1,16 @@
+#ifndef _LCOM_I8042_H_
+#define _LCOM_I8042_H_
+
+#include <lcom/lcf.h>
+#include <stdint.h>
+
+/*
+ Constants for programming the i8042 Keyboard.
+*/
+
+#define DELAY_US    20000
+#define KEYBOARD_IRQ	1
+
+
+
+#endif /* _LCOM_I8042_H */

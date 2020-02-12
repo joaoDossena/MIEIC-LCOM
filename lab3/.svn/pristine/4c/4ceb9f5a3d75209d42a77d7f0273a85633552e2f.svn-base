@@ -1,0 +1,9 @@
+#ifndef _LCOM_KBC_H_
+#define _LCOM_KBC_H_
+
+#include <lcom/lcf.h>
+#include <stdint.h>
+
+int kbc_subscribe_int()
+
+#endif /* _LCOM_KBC_H */

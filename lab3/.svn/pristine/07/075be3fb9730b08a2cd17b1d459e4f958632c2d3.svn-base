@@ -1,0 +1,30 @@
+#include "kbc.h"
+
+
+extern int sysCounter = 0;
+
+int kbc_subscribe_int()
+{
+
+}
+
+int sys_inb_count(port_t port, uint32_t *byte)
+{
+	int res = sys_inb(port, byte);
+	sysCounter++;
+
+  	return res;
+}
+
+int util_sys_inb(port_t port, uint8_t *byte)
+{
+	uint32_t temp;
+
+  	if (sys_inb_count(port, &temp) != 0)
+    	return 1;
+
+  	(*byte) = (uint8_t) temp;
+
+  	return 0;	
+}
+

@@ -1,0 +1,11 @@
+#ifndef _LCOM_KBC_H_
+#define _LCOM_KBC_H_
+
+#include <lcom/lcf.h>
+#include <stdint.h>
+
+int kbc_subscribe_int();
+
+int sys_inb_cnt(port_t port, uint32_t *byte);
+
+#endif /* _LCOM_KBC_H */
